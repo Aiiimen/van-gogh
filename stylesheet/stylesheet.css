@@ -8,7 +8,7 @@ body .landing-page, html .landing-page {
   position: absolute;
   width: 100%;
   height: 100vh;
-  background-image: url("../assests/images/vincent-full-frame.jpg");
+  background-image: url("../assests/images/vincent-full-frame.png");
   background-position: center;
   background-size: cover;
   display: -webkit-box;

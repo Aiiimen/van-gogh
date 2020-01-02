@@ -6,7 +6,7 @@ $(document).ready(function () {
     const periods = $('#list-of-periods');
     let periodsDates = ["1853", "1857", "1861-68", "1869-76", "1876-80", "1881", "1882", "1883", "1885", "1886", "1887", "1888", "1889", "1990"]
     const paintingsURL = "https://raw.githubusercontent.com/AimenBenAissa/van-gogh/master/json/vangoghkeyed.json";
-    const timelineURL = "https://raw.githubusercontent.com/AimenBenAissa/van-gogh/master/json/vangoghtimeline.json";
+    const timelineURL = "https://raw.githubusercontent.com/AimenBenAissa/van-quotes/gh-pages/vangoghtimeline.json";
     let paintings = [];
     let timeline = [];
     let rWidth; //between 70% and 100%
@@ -65,6 +65,7 @@ $(document).ready(function () {
 
     //render relevant paintings when dates are clicked
     let renderImages = (period) =>{
+        console.log(period)
 
         //render description for certain period
         const currentDescription = timeline[period].B;
