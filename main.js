@@ -16,6 +16,7 @@ $(document).ready(function () {
         $('#loadVincent').css("overflow", "visible");
         $('#loadVincent').css("display", "none");
         $('.main-container').css("display", "flex");
+        renderImages("1853");
     })
 
     //random number generator 
@@ -35,11 +36,11 @@ $(document).ready(function () {
     }).done(() => {
         timeline = timelineData.responseJSON;
         populate();
+        renderImages("1853");
     });
 
     //display relevant data when dates are clicked
     let populate = () => {
-        
         //display all dates on the side bar
         periodsDates.forEach((li, index) => {
             const liEl = $("<li></li>").text(li);
@@ -60,12 +61,11 @@ $(document).ready(function () {
 
             renderImages(this.innerHTML);
         })
+
     }
 
     //render relevant paintings when dates are clicked
     let renderImages = (period) =>{
-        console.log(period)
-
         //render description for certain period
         const currentDescription = timeline[period].B;
         description.html(currentDescription);
