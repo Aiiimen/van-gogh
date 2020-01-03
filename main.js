@@ -5,7 +5,7 @@ $(document).ready(function () {
     const description = $('.description p');
     const periods = $('#list-of-periods');
     let periodsDates = ["1853", "1857", "1861-68", "1869-76", "1876-80", "1881", "1882", "1883", "1885", "1886", "1887", "1888", "1889", "1990"]
-    const paintingsURL = "https://raw.githubusercontent.com/AimenBenAissa/van-gogh/master/json/vangoghkeyed.json";
+    const paintingsURL = "https://raw.githubusercontent.com/AimenBenAissa/van-quotes/gh-pages/vangoghkeyed.json";
     const timelineURL = "https://raw.githubusercontent.com/AimenBenAissa/van-quotes/gh-pages/vangoghtimeline.json";
     let paintings = [];
     let timeline = [];
@@ -35,7 +35,6 @@ $(document).ready(function () {
     }).done(() => {
         timeline = timelineData.responseJSON;
         populate();
-
     });
 
     //display relevant data when dates are clicked
@@ -85,22 +84,33 @@ $(document).ready(function () {
             rWidth = randomInt(70,100);
 
             rMargin= randomInt(100,300);
+            //create container
+            const cont = $('<div></div>');
             //create img element
             const img = $("<img></img>");
+            //create image title holder 
+            const title = $("<p></p>")
+
+
             //add margin & width
             img.width(rWidth + '%');
-            img.css('marginBottom', rMargin + 'px');
+            cont.css('marginBottom', rMargin + 'px');
 
             img.attr("src", currentURL);
 
             img.on('load', () =>{
                 //add alt to img
                 img.attr("alt", currentTitle)
+                title.html(currentTitle);
                 //append photos to both columns
                 if(i % 2 === 0){//i is even
-                    $('.column1').append(img);
+                    cont.append(img);
+                    cont.append(title);
+                    $('.column1').append(cont);
                 }else{//i is odd
-                    $('.column2').append(img);
+                    cont.append(img);
+                    cont.append(title);
+                    $('.column2').append(cont);
                 }
             })
         }

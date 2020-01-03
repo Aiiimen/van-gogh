@@ -85,6 +85,16 @@ body .main-container .content-container, html .main-container .content-container
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+}
+
+body .main-container .content-container .fade-out, html .main-container .content-container .fade-out {
+  width: 90%;
+  position: fixed;
+  top: 0;
+  height: 20%;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#ffffff));
+  background-image: linear-gradient(to top, transparent, #ffffff);
 }
 
 body .main-container .content-container .info-container, html .main-container .content-container .info-container {
@@ -135,7 +145,7 @@ body .main-container .content-container .paintings .column img, html .main-conta
   width: 100%;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 800px) {
   html .main-container .content-container .info-container {
     height: 0;
   }
