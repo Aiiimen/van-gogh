@@ -12,12 +12,7 @@ $(document).ready(function () {
     let rWidth; //between 70% and 100%
     let rMargin; // between 100px - 300px
 
-    $('#loadVincent p').click(()=>{
-        $('#loadVincent').css("overflow", "visible");
-        $('#loadVincent').css("display", "none");
-        $('.main-container').css("display", "flex");
-        renderImages("1853");
-    })
+
 
     //random number generator 
     let randomInt = (min, max) =>{
@@ -28,6 +23,12 @@ $(document).ready(function () {
         console.log("paintings success");
     }).done(() => {
         paintings = paintingsData.responseJSON;
+        $('#loadVincent p').click(()=>{
+            $('#loadVincent').css("overflow", "visible");
+            $('#loadVincent').css("display", "none");
+            $('.main-container').css("display", "flex");
+            renderImages("1853");
+        })
     });
 
     //load timeline data
@@ -36,7 +37,6 @@ $(document).ready(function () {
     }).done(() => {
         timeline = timelineData.responseJSON;
         populate();
-        renderImages("1853");
     });
 
     //display relevant data when dates are clicked
