@@ -146,21 +146,22 @@ body .main-container .content-container .paintings .column img, html .main-conta
 }
 
 @media screen and (max-width: 800px) {
-  html .main-container .content-container .info-container {
-    height: 0;
-  }
   html .main-container .content-container .info-container .description {
-    display: none;
+    position: relative;
+    width: 80%;
   }
   html .main-container .content-container .paintings {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    padding-right: 10px;
   }
   html .main-container .content-container .paintings .column {
-    width: 90%;
-    text-align: center;
+    width: 80%;
   }
 }
 /*# sourceMappingURL=stylesheet.css.map */
